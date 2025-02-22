@@ -38,19 +38,12 @@ function webhookManager:createAuthor(name, url, icon_url)
     }
 end
 
-function webhookManager:createEmbed(title, description, color, url, author, fields, footer, image, thumbnail, timestamp)
-    return {
-        ["title"] = title,
-        ["description"] = description,
-        ["color"] = color,
-        ["url"] = url,
-        ["author"] = author,
-        ["fields"] = fields,
-        ["footer"] = footer,
-        ["image"] = image,
-        ["thumbnail"] = thumbnail,
-        ["timestamp"] = timestamp
-    }
+-- title, description, color, url, author, fields, footer, image, thumbnail, timestamp
+function webhookManager:createEmbed(args)
+    local embed = {}
+    for i, v in pairs(args) do
+        embed[i] = v
+    end
 end
 
 function webhookManager:sendPostRequest(webhook_url, request_data)
