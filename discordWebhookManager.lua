@@ -1,0 +1,63 @@
+webhookManager = {}
+request = http_request or request or HttpPost or (syn and syn.request)
+
+assert(request, "Request is not supported in your executor.")
+
+function webhookManager:checkWebhook(webhook_url)
+    local headers = {["Content-Type"]="application/json"}
+    local data = {Url = webhook_url, Method = "GET", Headers = headers}
+    local response = request(data)
+
+    return response.Success, response.Body
+end
+
+function webhookManager:createField(name, value, inline)
+    inline = inline or true
+    return {
+        ["name"] = name,
+        ["value"] = value,
+        ["inline"] = inline
+    }    
+end
+
+function webhookManager:createImageOrThumbnail(url)
+    return {["url"] = url}
+end
+
+function webhookManager:createFooter(text, icon_url)
+    return {["text"] = text, ["icon_url"] = icon_url}
+end
+
+function webhookManager:createAuthor(name, url, icon_url)
+    return {
+        ["name"] = name,
+        ["url"] = url,
+        ["icon_url"] = icon_url
+    }
+end
+
+function webhookManager:createEmbed(title, description, color, url, author, fields, footer, image, thumbnail, timestamp)
+    return {
+        ["title"] = title,
+        ["description"] = description,
+        ["color"] = color,
+        ["url"] = url,
+        ["author"] = author,
+        ["fields"] = fields,
+        ["footer"] = footer,
+        ["image"] = image,
+        ["thumbnail"] = thumbnail,
+        ["timestamp"] = timestamp
+    }
+end
+
+function webhookManager:sendPostRequest(webhook_url, request_data)
+    local headers = {["Content-Type"]="application/json"}
+    local json = game:GetService("HttpService"):JSONEncode(request_data)
+    local data = {Url = webhook_url, Body = json, Method = "POST", Headers = headers}
+    local response = request(data)
+
+    return response.Success, response.Body
+end
+
+return webhookManager
