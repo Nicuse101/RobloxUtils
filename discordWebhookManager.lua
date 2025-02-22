@@ -1,7 +1,7 @@
 webhookManager = {}
 request = http_request or request or HttpPost or (syn and syn.request)
 
-function webhookManager:CheckSupport()
+function webhookManager:checkSupport()
     return type(request) == "function"
 end
 
