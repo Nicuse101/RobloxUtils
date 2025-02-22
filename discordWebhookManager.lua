@@ -44,6 +44,7 @@ function webhookManager:createEmbed(args)
     for i, v in pairs(args) do
         embed[i] = v
     end
+    return embed
 end
 
 function webhookManager:sendPostRequest(webhook_url, request_data)
