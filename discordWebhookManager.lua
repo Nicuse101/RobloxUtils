@@ -1,7 +1,9 @@
 webhookManager = {}
 request = http_request or request or HttpPost or (syn and syn.request)
 
-assert(request, "Request is not supported in your executor.")
+function webhookManager:CheckSupport()
+    return type(request) == "function"
+end
 
 function webhookManager:checkWebhook(webhook_url)
     local headers = {["Content-Type"]="application/json"}
