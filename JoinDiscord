@@ -1,15 +1,4 @@
-local function getInviteCode(sInvite)
-    for i = #sInvite, 1, -1 do
-        local char = sInvite:sub(i, i)
-        if char == "/" then
-            return sInvite:sub(i + 1, #sInvite)
-        end
-    end
-    return sInvite
-end
-
-local function joinServer(sInvite)
-    local inviteCode = getInviteCode(sInvite)
+local function joinServer(inviteCode)
     local url = "http://127.0.0.1:6463/rpc?v=1"
     local headers = {
         ["Content-Type"] = "application/json",
