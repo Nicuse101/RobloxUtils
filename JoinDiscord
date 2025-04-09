@@ -1,5 +1,6 @@
 local function joinServer(inviteCode)
     local url = "http://127.0.0.1:6463/rpc?v=1"
+    local HttpService = game:GetService("HttpService")
     local headers = {
         ["Content-Type"] = "application/json",
         ["Origin"] = "https://discord.com"
