@@ -1,13 +1,23 @@
 {
-  "fisch": {
-    "text": "Fisch",
-    "id": "16732694052",
-    "tags": ["the strongest battlegrounds", "tsb", "blox fruit", "blue lock", "rivals"]
-  },
   "blox fruits": {
     "text": "Blox Fruit",
     "id": "2753915549",
     "tags": ["the strongest battlegrounds", "bf", "blade ball", "fisch", "tsb"]
+  },
+  "bgsi": {
+    "text": "BGSI",
+    "id": "85896571713843",
+    "tags": ["bgsi", "blox fruits", "the strongest battlegrounds", "arise crossover", "bubblegum simulator"]
+  },
+  "grow a garden": {
+    "text": "grow a garden",
+    "id": "126884695634066",
+    "tags": ["gag", "blox fruits", "fisch", "arise crossover", "bubble gum simulator"]
+  },
+  "fisch": {
+    "text": "Fisch",
+    "id": "16732694052",
+    "tags": ["the strongest battlegrounds", "tsb", "blox fruit", "blue lock", "rivals"]
   },
   "tsb": {
     "text": "The Strongest Battleground",
@@ -34,9 +44,4 @@
     "id": "87039211657390",
     "tags": ["fisch", "bluelock rivals", "dead rails", "blox fruits", "the strongest battlegrounds"]
   },
-  "bgsi": {
-    "text": "BGSI",
-    "id": "85896571713843",
-    "tags": ["bgsi", "blox fruits", "the strongest battlegrounds", "arise crossover", "bubblegum simulator"]
-  }
 }
