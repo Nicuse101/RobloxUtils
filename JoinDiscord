@@ -21,9 +21,6 @@ local function joinServer(inviteCode)
             Headers = headers,
             Body = HttpService:JSONEncode(body)
         })
-        print("Response:", response.StatusCode, response.Body)
-    else
-        warn("HTTP request function not available.")
     end
 end
 
