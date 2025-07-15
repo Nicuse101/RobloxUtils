@@ -1,0 +1,9 @@
+function Request(url, method, ...)
+    local request_func = http_request or request or HttpPost or (syn and syn.request)
+    local data = {Url = url, Method = method, unpack(...)}
+    local response = request_func(data)
+
+    return response
+end
+
+return Request
