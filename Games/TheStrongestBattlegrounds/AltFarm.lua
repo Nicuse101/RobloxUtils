@@ -1,2 +1,2 @@
 
-print(CONFIG_JSON)
+print("Config json: ", CONFIG_JSON)
