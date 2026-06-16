@@ -1,1 +1,2 @@
 
+print(CONFIG_JSON)
